@@ -79,14 +79,14 @@ CREATE TABLE LESSON_BOOKED(
 	lesson_type			VARCHAR() CHECK (lesson_type = "" OR lesson_type = "" OR lesson_type = "")	-- fill with data
 );
 CREATE TABLE MANAGEMENT(
-	mgmnt_id				INT NOT NULL PRIMARY KEY,
+	mgmt_id				INT NOT NULL PRIMARY KEY,
 	fname				VARCHAR(20),
 	lname				VARCHAR(20)
 );
 CREATE TABLE ENROLLMENT(
 	enroll_id			INT NOT NULL PRIMARY KEY,
 	enroll_date			DATETIMEOFFSET DEFAULT GETDATE(),
-	mgmnt_id			INT
+	mgmt_id				INT
 );
 CREATE TABLE ENROLLMENT_DETAIL(
 	e_detail_id			INT NOT NULL PRIMARY KEY,
