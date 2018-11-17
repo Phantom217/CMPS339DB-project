@@ -15,8 +15,8 @@ CREATE TABLE SCHEDULE(
 );
 CREATE TABLE STUDENT_DETAIL(
 	sd_id				INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-	first_name			VARCHAR(20) NOT NULL,
-	last_name			VARCHAR(20) NOT NULL,
+	fname				VARCHAR(20) NOT NULL,
+	lname				VARCHAR(20) NOT NULL,
 	sd_address			VARCHAR(50),
 	email				VARCHAR(20),
 	birth_date			DATE,
@@ -26,8 +26,8 @@ CREATE TABLE STUDENT_PURCHASE_HIST(
 	sph_id				INT NOT NULL IDENTITY(1,1) PRIMARY KEY,	
 	student_id			INT,
 	enroll_detail_id		INT,
-	sph_start_date			DATETIMEOFFSET NOT NULL,
-	sph_end_date			DATETIMEOFFSET NOT NULL,
+	sph_start_date			DATETIMEOFFSET NOT NULL, -- add DEFAULT GETDATE() instead?
+	sph_end_date			DATETIMEOFFSET NOT NULL, -- add DEFAULT GETDATE() instead?
 
 	CONSTRAINT FK_STUDENT FOREIGN KEY (student_id) REFERENCES STUDENT(s_id)
 					ON DELETE SET NULL		ON UPDATE CASCADE,
@@ -35,12 +35,13 @@ CREATE TABLE STUDENT_PURCHASE_HIST(
 );
 CREATE TABLE STUDENT(
 	s_id				INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-	first_name			VARCHAR(20),
-	last_name			VARCHAR(20),
+	fname				VARCHAR(20),
+	lname				VARCHAR(20),
 	stud_detail_id			INT,
+	stud_purch_id			INT,	--added since it was in ER diagram and was missing
 
 	CONSTRAINT FK_DETAIL FOREIGN KEY (stud_detail_id) REFERENCES STUDENT_DETAIL(sd_id)
-					ON DELETE SET NULL			ON UPDATE CASCADE
+					ON DELETE SET NULL		ON UPDATE CASCADE
 );
 -----------------------
 -- Tyler's additions --
@@ -70,7 +71,7 @@ CREATE TABLE LESSON_DETAIL(
 	detail_id			INT NOT NULL PRIMARY KEY,
 	course_id			INT,
 	lesson_type			VARCHAR() CHECK (lesson_type = "" OR lesson_type = "" OR lesson_type = ""),	-- fill with data
-	duration			TIME
+	duration			TIME -- DATETIMEOFFSET?
 );
 CREATE TABLE LESSON_BOOKED(
 	booked_id			INT NOT NULL PRIMARY KEY,
