@@ -1,5 +1,4 @@
-﻿p_id,p_name,p_group_name,for_gender,in_stock,sum_in_stock,wholesale_price,retail_price,date_received,quantity_received,location_received
-1,Ballroom Shoe,shoe,U,1,30,$39.99 ,$69.99 ,12/13/2017,3,0466 Cordelia Pass
+﻿1,Ballroom Shoe,shoe,U,1,30,$39.99 ,$69.99 ,12/13/2017,3,0466 Cordelia Pass
 2,Latin Shoes,shoe,U,1,30,$39.99 ,$69.99 ,8/20/2018,27,38 Sunbrook Avenue
 3,Suit,costumes,M,1,15,$150.00 ,$250.00 ,7/25/2018,10,318 Shopko Park
 4,Dress,costumes,F,1,11,$167.00 ,$300.00 ,2/20/2018,8,01 Wayridge Crossing
