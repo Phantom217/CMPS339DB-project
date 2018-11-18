@@ -120,7 +120,6 @@ CREATE TABLE STUDENT(
 	fname				VARCHAR(20),
 	lname				VARCHAR(20),
 	stud_detail_id			INT,
-	stud_purch_id			INT,	--added since it was in ER diagram and was missing
 
 	CONSTRAINT FK_STUDENT_DETAIL FOREIGN KEY (stud_detail_id) REFERENCES STUDENT_DETAIL(sd_id)
 					ON DELETE SET NULL		ON UPDATE CASCADE
