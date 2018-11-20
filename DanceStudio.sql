@@ -128,6 +128,7 @@ CREATE TABLE STUDENT(
 );
 CREATE TABLE COURSE(
 	c_id				INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	c_name				VARCHAR(17) CHECK (c_name = 'Introduction' OR c_name = 'Social Foundation' OR c_name = 'Bronze' OR c_name = 'Silver' OR c_name = 'Gold'),
 	c_description			VARCHAR(50)
 );
 CREATE TABLE LESSON(
