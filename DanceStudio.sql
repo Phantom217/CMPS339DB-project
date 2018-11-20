@@ -111,6 +111,8 @@ CREATE TABLE STUDENT_DETAIL(
 	fname				VARCHAR(20) NOT NULL,
 	lname				VARCHAR(20) NOT NULL,
 	sd_address			VARCHAR(50),
+	sd_city				VARCHAR(20),	-- added to match employees
+	sd_state			CHAR(2),	-- added to match employees
 	email				VARCHAR(20),
 	birth_date			DATE,
 	phone_number			VARCHAR(10)
