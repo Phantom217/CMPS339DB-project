@@ -1,7 +1,10 @@
 CREATE TABLE SIZE(
 	size_id			INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-	size_int		FLOAT(2,1),
-	size_char		VARCHAR(3),
+	size_num		FLOAT(2,1),
+	size_char		VARCHAR(3) CHECK (size_char = 'XS' OR size_char = 'S' OR size_char = 'M' OR size_char = 'L' OR size_char = 'XL' OR size_char = 'XXL')
+
+
+
 );
 
 
