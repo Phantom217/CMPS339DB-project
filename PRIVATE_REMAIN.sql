@@ -1,0 +1,10 @@
+insert into MOCK_DATA (sprvlr_id, sprvlt_id, student_id, enroll_detail_id, tcprvr) values (9, 1, 6, 5, 7);
+insert into MOCK_DATA (sprvlr_id, sprvlt_id, student_id, enroll_detail_id, tcprvr) values (2, 1, 6, 10, 36);
+insert into MOCK_DATA (sprvlr_id, sprvlt_id, student_id, enroll_detail_id, tcprvr) values (3, 10, 5, 2, 25);
+insert into MOCK_DATA (sprvlr_id, sprvlt_id, student_id, enroll_detail_id, tcprvr) values (5, 1, 9, 6, 44);
+insert into MOCK_DATA (sprvlr_id, sprvlt_id, student_id, enroll_detail_id, tcprvr) values (10, 4, 2, 1, 45);
+insert into MOCK_DATA (sprvlr_id, sprvlt_id, student_id, enroll_detail_id, tcprvr) values (8, 10, 1, 8, 41);
+insert into MOCK_DATA (sprvlr_id, sprvlt_id, student_id, enroll_detail_id, tcprvr) values (1, 2, 9, 4, 47);
+insert into MOCK_DATA (sprvlr_id, sprvlt_id, student_id, enroll_detail_id, tcprvr) values (3, 10, 4, 10, 45);
+insert into MOCK_DATA (sprvlr_id, sprvlt_id, student_id, enroll_detail_id, tcprvr) values (6, 4, 7, 8, 43);
+insert into MOCK_DATA (sprvlr_id, sprvlt_id, student_id, enroll_detail_id, tcprvr) values (5, 5, 6, 2, 41);
