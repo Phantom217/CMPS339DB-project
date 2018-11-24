@@ -3,7 +3,14 @@
 --~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 --DDL QUERIES (THERE MUST BE 10 DDL QUERIES; GIVE A NUMBER "#" TO EACH QUERY)
---Q#: CREATE TABLE ...
+--Q1: CREATE TABLE ...
+-- Create table named SIZE
+CREATE TABLE SIZE(
+	size_id			INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	size_num		FLOAT(2,1),
+	size_char		VARCHAR(3) CHECK (size_char = 'XS' OR size_char = 'S' OR size_char = 'M' OR size_char = 'L' OR size_char = 'XL' OR size_char = 'XXL')
+
+);
 
 
 --Q2: ALTER TABLE ...
@@ -26,7 +33,12 @@ FOREIGN KEY (size_index) REFERENCES SIZE(size_id);
 
 --Q#: ADD TRIGGER TO CHECK ...
 AIM: .....................
-
+/**
+ *
+ *  something like:
+ *  CONSTRAINT CHK_Sizes CHECK ((size_int NOT NULL AND size_char IS NULL) OR (size_int IS NULL AND size_char NOT NULL)) + TRIGGER
+ *
+ */
 
 
 
