@@ -124,11 +124,11 @@ INSERT INTO LESSON (l_id, l_type, duration, cost, course_id) VALUES (1,'priv',01
 (13,'priv',03:00:00,74.99,5),
 (14,'group',03:00:00,49.99,5),
 (15,'pract',02:00:00,39.99,5);
-INSERT INTO MANAGEMENT (mgmt_id, fname, lname, mgr_ssn) VALUES (1,'Fulton','Conman'),
-(2,'Creigh','Seabright'),
-(3,'Dallas','Kinchley'),
-(4,'Shantee','Mattimoe'),
-(5,'Andre','Tottie');
+INSERT INTO MANAGEMENT (mgmt_id, fname, lname, mgr_ssn) VALUES (1,'Fulton','Conman',709-32-9489),
+(2,'Creigh','Seabright',126-55-0901),
+(3,'Dallas','Kinchley',711-88-2567),
+(4,'Shantee','Mattimoe',407-95-5221),
+(5,'Andre','Tottie',632-41-4276);
 INSERT INTO PRODUCT_COLOR (product_id, color) VALUES
 INSERT INTO PRODUCT (p_id, p_name, p_group_name, for_gender, size_index, in_stock, sum_in_stock, wholesale_price, retail_price, date_received, quantity_received, location_received, vendor_id) VALUES
 INSERT INTO PURCHASE (p_id, customer_id, sales_person, p_date, payment_method, num_items, total_price) VALUES
