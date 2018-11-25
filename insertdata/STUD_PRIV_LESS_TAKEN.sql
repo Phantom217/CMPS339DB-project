@@ -1,0 +1,1 @@
+INSERT INTO STUD_PRIV_LESS_TAKEN (sprvlt_id, sprvlr_id, sheduled_priv_date, lesson_taken_id, tcprvt) VALUES
