@@ -1,6 +1,6 @@
 INSERT INTO STUD_PRACT_LESS_REMAIN (spctlr_id, spctlt_id, student_id, enroll_detail_id, tcpctr) VALUES (1,1,4,1,10),
 (2,2,6,2,9),
 (3,3,7,3,9),
-(4,4,14,4,9),
+(4,4,14,4,10),
 (5,5,64,5,9),
 (6,6,37,6,10),
