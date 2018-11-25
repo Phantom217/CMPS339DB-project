@@ -3,7 +3,14 @@
 --~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 --DDL QUERIES (THERE MUST BE 10 DDL QUERIES; GIVE A NUMBER "#" TO EACH QUERY)
---Q#: CREATE TABLE ...
+--Q1: CREATE TABLE ...
+-- Create a size table for products
+CREATE TABLE SIZE(
+	size_id			INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	size_num		DECIMAL(11,2),
+	size_char		VARCHAR(3) CHECK (size_char = 'XS' OR size_char = 'S' OR size_char = 'M' OR size_char = 'L' OR size_char = 'XL' OR size_char = 'XXL')
+);
+
 
 
 --Q2: ALTER TABLE ...
@@ -160,6 +167,13 @@ WHERE EXISTS (SELECT E.d_num
 GROUP BY D.d_num;
 
 --Q17: WITH-QUERY:
-
+-- Use a with query to shorten the employee table and see the department name that they work for.
+WITH short_employee 
+(e_id, lname, job_title, mgmt_id)
+AS (SELECT e_id, lname, job_title, mgmt_id
+	FROM EMPLOYEE)
+SELECT *
+FROM short_employee AS SE
+FULL OUTER JOIN DEPARTMENT AS D ON SE.mgmt_id = D.mgmt_id
 
 
