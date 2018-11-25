@@ -50,3 +50,12 @@ DROP COLUMN manager_ssn;
 
 ALTER TABLE MANAGEMENT
 ADD mgr_ssn		VARCHAR(11) NOT NULL DEFAULT 'XXX-XX-XXXX';
+
+
+
+/* modify vendor to be correct */
+ALTER TABLE VENDOR
+ADD v_city	VARCHAR(20);
+
+ALTER TABLE VENDOR
+ADD v_state CHAR(2);
