@@ -18,4 +18,3 @@ INSERT INTO VENDOR (v_id, v_name, v_location) VALUES (1,'Brainsphere','50574 Cor
 (18,'Skyble','8922 Moose Place','Portland','OR'),
 (19,'Geba','03890 West Plaza','Philadelphia','PA'),
 (20,'Feedmix','9 Mayer Road','Eugene','OR');
-

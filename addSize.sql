@@ -1,6 +1,6 @@
 CREATE TABLE SIZE(
 	size_id			INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-	size_num		DECIMAL(2,1),
+	size_num		DECIMAL(11,2),
 	size_char		VARCHAR(3) CHECK (size_char = 'XS' OR size_char = 'S' OR size_char = 'M' OR size_char = 'L' OR size_char = 'XL' OR size_char = 'XXL')
 );
 
@@ -59,3 +59,15 @@ ADD v_city	VARCHAR(20);
 
 ALTER TABLE VENDOR
 ADD v_state CHAR(2);
+
+
+/* make customer generate c_id */
+ALTER TABLE CUSTOMER
+ADD ADD_FUCKING_COLUMNS INT;
+
+
+/* missing tables added */
+ALTER TABLE STUDENT_DETAIL
+ADD sd_city VARCHAR(20);
+ALTER TABLE STUDENT_DETAIL
+ADD sd_state CHAR(2);
