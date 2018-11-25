@@ -11,8 +11,6 @@ CREATE TABLE SIZE(
 	size_char		VARCHAR(3) CHECK (size_char = 'XS' OR size_char = 'S' OR size_char = 'M' OR size_char = 'L' OR size_char = 'XL' OR size_char = 'XXL')
 );
 
-
-
 --Q2: ALTER TABLE ...
 -- Add an attribute called size_index to PRODUCT table after removing the size attribute
 ALTER TABLE PRODUCT
@@ -48,21 +46,23 @@ AIM: .....................
 
 
 
---Q#: INSERT DATA:
-AIM: .....................
-
+--Q2: INSERT DATA:
+-- Insert a new employee into the EMPLOYEE table.
+INSERT INTO EMPLOYEE (e_id, fname, lname, e_email, e_address, e_city, e_state, phone_number, ssn, birth_date, job_title, d_num, mgmt_id) 
+VALUES (57-1111054,'Newbie','Branch','newbieBranch@patch.com','2200 Morrison Blvd.','New Orleans','LA','985-750-8181','439-91-5617','1991-02-16','Telemarketor',5,4);
 
 --Q3: UPDATE DATA:
 -- Add 1 the each d_num column in the employee table, after using IDENTITY
 -- We found that some values in our data was incremented strangly. This was a
 -- Quick solution to the problem.
 UPDATE EMPLOYEE
-SET d_num=d_num+1;
+SET d_num = d_num + 1;
 
 
 
 --Q4: DELETE DATA:
-AIM: .....................
+-- Delete an employee from EMPLOYEE table
+DELETE FROM EMPLOYEE WHERE e_id = -1487710;
 
 
 
@@ -175,5 +175,6 @@ AS (SELECT e_id, lname, job_title, mgmt_id
 SELECT *
 FROM short_employee AS SE
 FULL OUTER JOIN DEPARTMENT AS D ON SE.mgmt_id = D.mgmt_id
+
 
 
