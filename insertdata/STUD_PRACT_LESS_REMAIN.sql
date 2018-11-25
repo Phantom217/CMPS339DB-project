@@ -1,0 +1,1 @@
+INSERT INTO STUD_PRACT_LESS_REMAIN (spctlr_id, spctlt_id, student_id, enroll_detail_id, tcpctr) VALUES
