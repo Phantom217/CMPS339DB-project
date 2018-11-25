@@ -1,10 +1,7 @@
 CREATE TABLE SIZE(
 	size_id			INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-	size_num		FLOAT(2,1),
+	size_num		DECIMAL(2,1),
 	size_char		VARCHAR(3) CHECK (size_char = 'XS' OR size_char = 'S' OR size_char = 'M' OR size_char = 'L' OR size_char = 'XL' OR size_char = 'XXL')
-
-
-
 );
 
 
@@ -30,17 +27,26 @@ ALTER TABLE PURCHASE_PRODUCT
 DROP COLUMN total_price;
 
 ALTER TABLE PURCHASE
-ADD COLUMN num_items 	INT NOT NULL;
+ADD num_items 	INT NOT NULL;
 
 
 ALTER TABLE PURCHASE
-ADD COLUMN total_price 	MONEY NOT NULL;
+ADD total_price 	MONEY NOT NULL;
 
 
 
 /* add c_name to COURSE */
 ALTER TABLE COURSE
-ADD COLUMN c_name 		VARCHAR(17) NOT NULL;
+ADD c_name 		VARCHAR(17) NOT NULL CHECK (c_name = 'Introduction' OR c_name = 'Social Foundation' OR c_name = 'Bronze' OR c_name = 'Silver' OR c_name = 'Gold');;
 
 ALTER TABLE COURSE
-ADD CONSTRAINT c_name CHECK (c_name = 'Introduction' OR c_name = 'Social Foundation' OR c_name = 'Bronze' OR c_name = 'Silver' OR c_name = 'Gold');
+ADD CONSTRAINT CHK_name 
+
+
+
+/* add mgr_ssn to MANAGEMENT and remove it from DEPARTMENT */
+ALTER TABLE DEPARTMENT
+DROP COLUMN manager_ssn;
+
+ALTER TABLE MANAGEMENT
+ADD mgr_ssn		VARCHAR(11) NOT NULL DEFAULT 'XXX-XX-XXXX';
