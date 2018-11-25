@@ -1,0 +1,1 @@
+INSERT INTO STUD_PRACT_LESS_TAKEN (spctlt_id, spctlr_id, sheduled_pract_date, lesson_taken_id, tcpctt) VALUES
