@@ -29,22 +29,38 @@ ALTER TABLE PRODUCT
 ADD CONSTRAINT FK_PRODUCT_SIZE
 FOREIGN KEY (size_index) REFERENCES SIZE(size_id);
 
---Q#: ADD TRIGGER TO CHECK ...
-AIM: .....................
-
-
-
-
+--Q5: ADD TRIGGER TO CHECK ...
+-- Create a trigger for altering and dropping tables
+USE w0652777
+GO
+CREATE TRIGGER DDLTriggerToBlockTableDDL
+ON DATABASE
+FOR DROP_TABLE,ALTER_TABLE
+AS
+BEGIN
+ PRINT 'Disable trigger DDLTriggerToBlockTableDDL to drop or alter tables'
+ ROLLBACK
+END
+-- Trigger test
+ALTER TABLE CUSTOMER
+ADD messed_up BIT DEFAULT 1;
 
 
 
 --~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 --DML QUERIES	(GIVE A NUMBER "#" TO EACH QUERY)
 
---Q#: TRIGGER TEST QUERY:
-AIM: .....................
-
-
+--Q1: TRIGGER TEST QUERY:
+-- Create a trigger and test for course table
+CREATE TRIGGER INSTEADOFTriggerCOURSE
+ON COURSE
+INSTEAD OF INSERT
+AS
+BEGIN
+    PRINT('Instead of trigger is Executed!')
+END;
+-- Trigger test
+INSERT INTO COURSE (c_name, c_description) VALUES ('Gold', 'testing');
 
 --Q2: INSERT DATA:
 -- Insert a new employee into the EMPLOYEE table.
@@ -83,13 +99,21 @@ WHERE EXISTS (SELECT P.p_group_name, P.sum_in_stock
 			 );
 
 
---Q#: QUERY DATA WITH SUB-QUERY IN FROM CLAUSE:
-AIM: .....................
+--Q7: QUERY DATA WITH SUB-QUERY IN FROM CLAUSE:
+-- Determine number of private lessons taken by student, ordered by date
+SELECT sprvlt_id, tcprvt, scheduled_priv_date
+FROM (SELECT sprvlt_id, scheduled_priv_date, tcprvt
+      FROM STUD_PRIV_LESS_TAKEN
+      GROUP BY sprvlt_id, sprvlr_id, scheduled_priv_date, tcprvt) AS privTakenSummary
+ORDER BY scheduled_priv_date;
 
 
-
---Q#: QUERY DATA WITH SUB-QUERY IN SELECT CLAUSE:
-AIM: .....................
+--Q8: QUERY DATA WITH SUB-QUERY IN SELECT CLAUSE:
+-- Find total revenue per day from store
+SELECT P.p_date, (SELECT SUM(total_price)
+				FROM PURCHASE AS PUR
+				WHERE PUR.p_id = P.p_id) AS AverageRevenue
+FROM PURCHASE AS P;
 
 
 
@@ -175,6 +199,4 @@ AS (SELECT e_id, lname, job_title, mgmt_id
 SELECT *
 FROM short_employee AS SE
 FULL OUTER JOIN DEPARTMENT AS D ON SE.mgmt_id = D.mgmt_id
-
-
 
