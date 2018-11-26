@@ -1,5 +1,5 @@
---TEAM NAME:
---TEAM MEMBERS' NAME:
+--TEAM NAME: Quintinium
+--TEAM MEMBERS' NAME: Dustin M. Branch, Benjamin Henry, Christopher Oalman
 --~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 --DDL QUERIES (THERE MUST BE 10 DDL QUERIES; GIVE A NUMBER "#" TO EACH QUERY)
